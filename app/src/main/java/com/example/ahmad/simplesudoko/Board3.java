@@ -42,12 +42,13 @@ public class Board3 extends AppCompatActivity implements Button.OnClickListener,
             if (i == 2 || i == 5 || i == 8) {
                 View view = new View(this);
                 view.setLayoutParams(new LinearLayout.
-                        LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 2));
-                view.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                        LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 6));
+                view.setBackgroundColor(getResources().getColor(R.color.white));
                 boardLayout.addView(view);
             }
             for (int j = 0; j < 9; j++) {
                 Button button = new Button(this);
+                button.setTextSize(20);
                 button.setLayoutParams(new LinearLayout.LayoutParams(
                         0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
                 if (easy[i][j] != 0) {
@@ -64,8 +65,8 @@ public class Board3 extends AppCompatActivity implements Button.OnClickListener,
                 if (j == 2 || j == 5) {
                     View view = new View(this);
                     view.setLayoutParams(new LinearLayout.
-                            LayoutParams(2, LinearLayout.LayoutParams.MATCH_PARENT));
-                    view.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                            LayoutParams(6, LinearLayout.LayoutParams.MATCH_PARENT));
+                    view.setBackgroundColor(getResources().getColor(R.color.white));
                     rowBoardLayout.addView(view);
                 }
             }
