@@ -46,6 +46,7 @@ public class Board3 extends AppCompatActivity implements Button.OnClickListener,
                 view.setBackgroundColor(getResources().getColor(R.color.white));
                 boardLayout.addView(view);
             }
+
             for (int j = 0; j < 9; j++) {
                 Button button = new Button(this);
                 button.setTextSize(20);
