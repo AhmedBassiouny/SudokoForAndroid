@@ -8,10 +8,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".board"
-            android:windowSoftInputMode="stateAlwaysVisible"></activity>
-        <activity android:name=".Board2"></activity>
         <activity android:name=".Board3">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
