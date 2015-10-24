@@ -12,7 +12,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Board3 extends AppCompatActivity implements Button.OnClickListener {
+public class Board3 extends AppCompatActivity implements Button.OnClickListener, Button.OnLongClickListener {
     int easy[][] = new int[][]{{0, 0, 0, 2, 6, 0, 7, 0, 1},
             {6, 8, 0, 0, 7, 0, 0, 9, 0}, {1, 9, 0, 0, 0, 4, 5, 0, 0},
             {8, 2, 0, 1, 0, 0, 0, 4, 0}, {0, 0, 4, 6, 0, 2, 9, 0, 0},
@@ -56,6 +56,7 @@ public class Board3 extends AppCompatActivity implements Button.OnClickListener 
                     button.setText(String.valueOf(easy[i][j]));
                 } else {
                     button.setText(" ");
+                    button.setOnLongClickListener(this);
                     button.setTag("softB," + String.valueOf(i) + "," + String.valueOf(j));
                 }
                 button.setOnClickListener(this);
@@ -221,5 +222,19 @@ public class Board3 extends AppCompatActivity implements Button.OnClickListener 
                 }
             }
         }
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        Button button = (Button) v;
+        String str = (String) button.getTag();
+        String[] sa = str.split(",");
+        String is = sa[1];
+        String js = sa[2];
+        int i = Integer.valueOf(Integer.valueOf(is));
+        int j = Integer.valueOf(Integer.valueOf(js));
+        easy[i][j] = 0;
+        button.setText(" ");
+        return true;
     }
 }
